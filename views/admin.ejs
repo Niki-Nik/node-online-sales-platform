@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<title>Мои продажи</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<style>
+		body {
+			background-color: aliceblue
+		}
+	</style>
+	<div class="container">
+		<div
+			class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+			<h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Интернет магазин собак</a></h5>
+			<nav class="my-2 my-md-0 mr-md-3">
+			</nav>
+			<a class="btn btn-outline-primary" href="/admin/add">Добавить продажу</a>
+		</div>
+		<h1>Мои продажи</h1>
+		<% for (let i=0; i < dogs.length; i++) { %>
+			<div class="card" style="width: 20rem;">
+				<!-- <img src="<%= dogs[i].photo %>" class="card-img-top" alt="фото собаки"> -->
+				<div class="card-body">
+					<h5 class="card-title">
+						<%= dogs[i].title %>
+					</h5>
+					<p class="card-text">
+						<%=dogs[i].body %>
+					</p>
+					<p>Цена: <%= dogs[i].price %> сом</p>
+					<p id="phone">Телефон: +<%= dogs[i].phone %>
+					</p>
+					<p id="email">Email: <%= dogs[i].email %>
+					</p>
+					<a type="button" href="/admin/edit/<%=dogs[i]._id %>" class="btn btn-secondary">Редактировать</a>
+					<a href="/admin/<%=dogs[i]._id %>" type="submit" class="btn btn-danger">Удалить</a>
+				</div>
+			</div>
+			<% } %>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
