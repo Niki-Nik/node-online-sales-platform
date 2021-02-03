@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const config = require("./config");
 const database = require("./database");
-const Dog = require("./models/dog");
-const User = require("./models/user");
+const Dog = require("./models/Dog");
+const User = require("./models/User");
 
 const app = express();
 
