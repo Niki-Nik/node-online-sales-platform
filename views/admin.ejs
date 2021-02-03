@@ -14,36 +14,45 @@
 		body {
 			background-color: aliceblue
 		}
+
+		.card {
+			width: 32%;
+			margin-left: 1%;
+		}
 	</style>
 	<div class="container">
 		<div
 			class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-			<h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Интернет магазин собак</a></h5>
+			<h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Online sales platform</a></h5>
 			<nav class="my-2 my-md-0 mr-md-3">
 			</nav>
 			<a class="btn btn-outline-primary" href="/admin/add">Добавить продажу</a>
 		</div>
-		<h1>Мои продажи</h1>
-		<% for (let i=0; i < dogs.length; i++) { %>
-			<div class="card" style="width: 20rem;">
-				<!-- <img src="<%= dogs[i].photo %>" class="card-img-top" alt="фото собаки"> -->
-				<div class="card-body">
-					<h5 class="card-title">
-						<%= dogs[i].title %>
-					</h5>
-					<p class="card-text">
-						<%=dogs[i].body %>
-					</p>
-					<p>Цена: <%= dogs[i].price %> сом</p>
-					<p id="phone">Телефон: +<%= dogs[i].phone %>
-					</p>
-					<p id="email">Email: <%= dogs[i].email %>
-					</p>
-					<a type="button" href="/admin/edit/<%=dogs[i]._id %>" class="btn btn-secondary">Редактировать</a>
-					<a href="/admin/<%=dogs[i]._id %>" type="submit" class="btn btn-danger">Удалить</a>
+		<h1>Мои продажи: <%= dogs.length %>
+		</h1>
+		<div class="d-flex flex-wrap">
+			<% for (let i=0; i < dogs.length; i++) { %>
+				<div class="card mb-4 shadow-sm" style="width: 20rem;">
+					<!-- <img src="<%= dogs[i].photo %>" class="card-img-top" alt="фото собаки"> -->
+					<div class="card-body">
+						<h5 class="card-title">
+							<%= dogs[i].title %>
+						</h5>
+						<p class="card-text">
+							<%=dogs[i].body %>
+						</p>
+						<p>Цена: <%= dogs[i].price %> сом</p>
+						<p id="phone">Телефон: +<%= dogs[i].phone %>
+						</p>
+						<p id="email">Email: <%= dogs[i].email %>
+						</p>
+						<a type="button" href="/admin/edit/<%=dogs[i]._id %>"
+							class="btn btn-secondary">Редактировать</a>
+						<a href="/admin/<%=dogs[i]._id %>" type="submit" class="btn btn-danger">Удалить</a>
+					</div>
 				</div>
-			</div>
-			<% } %>
+				<% } %>
+		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
